@@ -4,10 +4,15 @@
 <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="jA1egQrpB" ></script>
 <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
 <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
-<script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
 
 <script type="text/plain" data-usercentrics="Google Analytics" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-171425717-1"></script>
-<script type="text/plain" data-usercentrics="Google Analytics">
+<script type="text/plain" data-usercentrics="Google Analytics"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+  </script>
 
 </script>
 </head>
@@ -29,5 +34,11 @@
                 <h2>Post Twitter</h2>
                 <blockquote class="twitter-tweet"><p lang="pt" dir="ltr">🔵⚪Equipamentos de treino 2020/21 já disponíveis nas FC Porto Stores<a href="https://twitter.com/hashtag/FCPorto?src=hash&amp;ref_src=twsrc%5Etfw">#FCPorto</a> <a href="https://twitter.com/hashtag/Na%C3%A7%C3%A3oPorto?src=hash&amp;ref_src=twsrc%5Etfw">#NaçãoPorto</a> <a href="https://t.co/FMrAjouzSi">pic.twitter.com/FMrAjouzSi</a></p>&mdash; FC Porto - Dobradinha 19/20 🏆🏆 (@FCPorto) <a href="https://twitter.com/FCPorto/status/1290286320061779975?ref_src=twsrc%5Etfw">August 3, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+                <h2>reCAPTCHA</h2>
+                <form action="?" method="POST">
+                    <div class="g-recaptcha" data-sitekey="6Lcm6rkZAAAAABDVQXIJxIaBcR7AQMHQWCO2SA_F"></div>
+                    <br/>
+                    <input type="submit" value="Submit">
+                  </form>
 </body>
 </html>
