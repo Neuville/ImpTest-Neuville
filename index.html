@@ -25,13 +25,8 @@
 <script src="https://www.google.com/recaptcha/api.js?render=6LcUB74ZAAAAANONQKYC228h1o7CfxHk1qCQXSiV"></script>
 
 <script>
-  function onClick(e) {
-    e.preventDefault();
-    grecaptcha.ready(function() {
-      grecaptcha.execute('6LcUB74ZAAAAANONQKYC228h1o7CfxHk1qCQXSiV', {action: 'submit'}).then(function(token) {
-          console.log("Workds")
-      });
-    });
+  function onSubmit(token) {
+    alert("It Works")
   }
 </script>
 
@@ -49,11 +44,11 @@
           This page serves as a Direct implementation test for the UserCentrics CMP and GA.
       </p>
 
-      <h2>reCAPTCHA</h2>
+      <h2>reCAPTCHAv3</h2>
       <button class="g-recaptcha" 
         data-sitekey="6LcUB74ZAAAAANONQKYC228h1o7CfxHk1qCQXSiV" 
-        data-callback='onClick' 
-        data-action='submit'>Submit</button>
+        data-callback="onSubmit"
+        data-action='submit'>Test</button>
       
       <h2>reCAPTCHAv2</h2>
       <form action="?" method="POST">
