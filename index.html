@@ -5,12 +5,14 @@
   <!-- Client Normal Script -->
   <!--<script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="SyiV0DMpN"></script>-->
 
-  <!--GTM implementation-->
+  <!--GTM implementation
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NR8LC6V');</script>
+    })(window,document,'script','dataLayer','GTM-NR8LC6V');</script>-->
+
+<script id="usercentrics-cmp" data-settings-id="jA1egQrpB" src="https://app.usercentrics.eu/browser-ui/latest/bundle.js" defer></script>
   
 <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
 <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
@@ -20,20 +22,25 @@
 <script type="text/plain" data-usercentrics="Google Analytics"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcUB74ZAAAAANONQKYC228h1o7CfxHk1qCQXSiV"></script>
 
 <script>
-    function onSubmit(token) {
-      document.getElementById("demo-form").submit();
-    }
-  </script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.ready(function() {
+      grecaptcha.execute('6LcUB74ZAAAAANONQKYC228h1o7CfxHk1qCQXSiV', {action: 'submit'}).then(function(token) {
+          console.log("Workds")
+      });
+    });
+  }
+</script>
 
 </script>
 </head>
     
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NR8LC6V'"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!--<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NR8LC6V'"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
 
       <h1>
           Just an implementation test!
