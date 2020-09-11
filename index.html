@@ -40,9 +40,39 @@
     @import url("https://use.typekit.net/czh4jmu.css");
   }
   </script>
-</head>
+<!-- reference your copy Font Awesome here (from our CDN or by hosting yourself) -->
+<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+<link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
 
+<!-- custom styling for all icons -->
+i.fas,
+i.fab {
+  border: 1px solid red;
+}
+
+<!-- custom styling for specific icons -->
+.fa-fish {
+  color: salmon;
+}
+
+.fa-frog {
+  color: green;
+}
+
+.fa-user-ninja.vanished {
+  opacity: 0.0;
+}
+
+.fa-facebook {
+  color: rgb(59, 91, 152);
+}
+</head>
 <body>
+<i class="fas fa-fish"></i>
+<i class="fas fa-frog"></i>
+<i class="fas fa-user-ninja vanished"></i>
+<i class="fab fa-facebook"></i>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NR8LC6V'" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
 
