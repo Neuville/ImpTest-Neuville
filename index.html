@@ -15,11 +15,12 @@
       window.addEventListener("ucEvent", function (e) {    
       if( e.detail && e.detail.event == "consent_status") {
           // check for consent status of service "Google Ads Remarketing"
-          if(e.detail['Google Ads Remarketing'] === true) {
-            document.getElementsById("testframe").src = "https://www.youtube.com/embed/_5F32AfExR8"
+          if(e.detail['Google Maps'] === true) {
+            console.log("é true mothafoka")
+            document.getElementById("testframe").setAttribute("src","https://www.youtube.com/embed/_5F32AfExR8");
           }
           else {
-            console.log('Google Ads Remarketing has no consent');
+            console.log('Maps has no consent');
           }
       }
   });
@@ -39,7 +40,5 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
-  <script type="text/plain" data-usercentrics="Google Maps" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3fCQEPEZKpz_LqGWegcbNfwbn3q0rxc8&callback=initMap">
-  </script>
 </body>
 </html>
