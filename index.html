@@ -11,6 +11,19 @@
 
     <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
     <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+    <script>
+      window.addEventListener("ucEvent", function (e) {    
+      if( e.detail && e.detail.event == "consent_status") {
+          // check for consent status of service "Google Ads Remarketing"
+          if(e.detail['Google Ads Remarketing'] === true) {
+            document.getElementById("testframe").src = "https://www.youtube.com/embed/_5F32AfExR8"
+          }
+          else {
+            console.log('Google Ads Remarketing has no consent');
+          }
+      }
+  });
+  </script>
 </head>
 
 <body>
@@ -20,6 +33,12 @@
   <p>
     This page serves as a Direct implementation test for the UserCentrics CMP and GA.
   </p>
+  <h3>Youtube</h3>
+    <div class="sdp-tech">
+        <iframe id="testframe" width="560" height="315" src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
   <script type="text/plain" data-usercentrics="Google Maps" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3fCQEPEZKpz_LqGWegcbNfwbn3q0rxc8&callback=initMap">
   </script>
 </body>
