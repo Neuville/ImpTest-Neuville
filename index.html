@@ -16,7 +16,7 @@
       if( e.detail && e.detail.event == "consent_status") {
           // check for consent status of service "Google Ads Remarketing"
           if(e.detail['Google Ads Remarketing'] === true) {
-            document.getElementById("testframe").src = "https://www.youtube.com/embed/_5F32AfExR8"
+            document.getElementsById("testframe").src = "https://www.youtube.com/embed/_5F32AfExR8"
           }
           else {
             console.log('Google Ads Remarketing has no consent');
@@ -35,7 +35,7 @@
   </p>
   <h3>Youtube</h3>
     <div class="sdp-tech">
-        <iframe id="testframe" width="560" height="315" src="" frameborder="0"
+        <iframe id="testframe" width="560" height="315" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
