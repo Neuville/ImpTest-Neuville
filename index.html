@@ -5,25 +5,20 @@
   <script id="usercentrics-cmp" data-settings-id="jA1egQrpB" data-tcf-enabled
     src="https://app.usercentrics.eu/browser-ui/latest/bundle.js"></script>
   (consents_initialized)|(consent_changed.*)-->
-  <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="jA1egQrpB" ></script> 
-
+  <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="-yt7z9Ewv"></script>
+  <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
+    <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
     <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
-    <script>
-      window.addEventListener("ucEvent", function (e) {    
-      if( e.detail && e.detail.event == "consent_status") {
-          // check for consent status of service "Google Ads Remarketing"
-          if(e.detail['Google Maps'] === true) {
-            console.log("é true mothafoka")
-            document.getElementById("testframe").setAttribute("src","https://www.youtube.com/embed/_5F32AfExR8");
-          }
-          else {
-            console.log('Maps has no consent');
-          }
+ 
+  <!-- RECAPTCHA v3-->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdPKdoZAAAAAMd1gOFL_c_gE2_7zK-OTn2VSXAk"></script>
+  <script>
+      function onSubmit(token) {
+          alert("This is just a demo, but if this shows, it means that the logic works :))")
       }
-  });
   </script>
 </head>
 
@@ -40,5 +35,11 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>
+    <h3>reCAPTCHAv3</h3>
+    <div class="sdp-tech">
+        <button class="g-recaptcha" data-sitekey="6LdPKdoZAAAAAMd1gOFL_c_gE2_7zK-OTn2VSXAk" data-callback='onSubmit'
+            data-action='submit' value="submit">Submit</button>
+    </div>
 </body>
 </html>
+
