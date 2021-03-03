@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script id="usercentrics-cmp" data-settings-id="jA1egQrpB" src="https://app.usercentrics.eu/browser-ui/latest/bundle.js" data-tcf-enabled></script>
+  <script id="usercentrics-cmp" data-settings-id="VdJzaAvL0" src="https://app.usercentrics.eu/browser-ui/latest/bundle_legacy.js" data-tcf-enabled></script>
+   <script>    
+    const ucConsentTracker = {};
+    window.addEventListener("ucConsentEvents", (e) => {
+        const status = UC_UI.getServices();
+        for (let i = 0; i < status.length; i++) {
+            if (status[i].consentStatus && ucConsentTracker[status[i].templateId] === undefined) {
+                ucConsentTracker[status[i].templateId] = 1;
+                _satellite.track(status[i].templateId)
+            }
+        }
+    });
+</script>
   <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
     <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +38,6 @@
     <div class="sdp-tech">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/ftNnSM_VnTM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    
+    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://akademiefuersohr.podigee.io/15-europa-kritik/embed?context=external"></script>
 </body>
 </html>
