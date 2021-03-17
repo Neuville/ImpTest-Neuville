@@ -1,44 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script id="usercentrics-cmp" data-settings-id="SgPNLNVuZ" src="https://app.usercentrics.eu/browser-ui/latest/bundle.js" defer ></script>
-  <script>    
-    const ucConsentTracker = {};
-    window.addEventListener("ucConsentEvents", (e) => {
-        console.log("works", UC_UI.getServices())
-        const status = UC_UI.getServices();
-        for (let i = 0; i < status.length; i++) {
-            if (status[i].consentStatus && ucConsentTracker[status[i].templateId] === undefined) {
-                ucConsentTracker[status[i].templateId] = 1;
-                _satellite.track(status[i].templateId)
-            }
-        }
-    });
-</script>
-  <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
-    <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script type="application/javascript">window.UC_UI_SUPPRESS_CMP_DISPLAY=true;</script>
+  <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle_legacy.js" defer></script>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5L6VFR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <h1>
-    Just an implementation test!
-  </h1>
-  <p>
-    This page serves as a Direct implementation test for the UserCentrics CMP and GA.
-  </p>
-
-  <h3>Youtube</h3>
-    <div class="sdp-tech">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ftNnSM_VnTM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <script class="podigee-podcast-player" src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js" data-configuration="https://akademiefuersohr.podigee.io/15-europa-kritik/embed?context=external"></script>
+  <div>Test CMPv2 Legacy!</div>
 </body>
 </html>
