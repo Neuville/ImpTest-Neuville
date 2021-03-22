@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
   <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle_legacy.js" defer></script>
+  <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
+  <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
   <div>Test CMPv2 Legacy!</div>
+  <form action="?" method="POST">
+    <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+    <br/>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 </html>
