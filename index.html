@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script id="usercentrics-cmp" data-settings-id="vl6U6wbgG" src="https://app.usercentrics.eu/browser-ui/latest/bundle_legacy.js" data-tcf-enabled=""></script><meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
+ <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle_legacy.js" defer></script>
+  <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
   <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+  </script>
 </head>
 
 <body>
   <div>Test CMPv2 Legacy!</div>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/GgAW8fH8_q8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <button class="g-recaptcha" 
+        data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button>
 </body>
 </html>
