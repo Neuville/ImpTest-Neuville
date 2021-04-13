@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle_legacy.js?5566" defer></script>
-  <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
-  <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+ <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle_legacy.js?t=5566" defer></script>
+ <link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
+ <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
+
+ <script>
+ uc.blockOnly([
+   'BJz7qNsdj-7', // YouTube Template ID
+   'HkocEodjb7', // Google Analytics Template ID
+   // ... all other needed Template IDS
+ ]);
+ </script>
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
     function onSubmit(token) {
