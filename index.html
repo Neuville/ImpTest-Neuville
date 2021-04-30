@@ -7,11 +7,13 @@
 <link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
 <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
 <script>
-  window.addEventListener("UC_UI_INITIALIZED", function(onConsentChange) {
-    if(UC_UI.getServices().filter(data => (data.id === 'RyDAUe7cq') & (data.consent.status === true)).length==0){
-      document.getElementsByClassName('taggbox-container').innerHTML = '';
-    }else{
-      document.getElementByClassName('taggbox-container').innerHTML = "<div class='taggbox-socialwall' data-wall-id='57222' view-url='https://widget.taggbox.com/57222'></div>";
+  window.addEventListener("ucEvent", function(event) {
+    if( e.detail && e.detail.event == "consent_status") {
+      if(e.detail['Taggbox'] === true){
+        document.getElementByClassName('taggbox-container').innerHTML = "<div class='taggbox-socialwall' data-wall-id='57222' view-url='https://widget.taggbox.com/57222'></div><script src='https://widget.taggbox.com/embed.min.js' type='text/javascript'/>";
+      }else{
+        document.getElementsByClassName('taggbox-container').innerHTML = '';
+      }
     }
   })
 </script>
