@@ -7,7 +7,7 @@
 <link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
 <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
 <script>
-  window.addEventListener("ucEvent", function(event) {
+  window.addEventListener("UC_UI_INITIALIZED", function(event) {
     if(UC_UI.getServices().filter(data => (data.id === 'RyDAUe7cq') & (data.consent.status === true)).length==0){
       document.getElementsById('taggbox').innerHTML = '';
     }else{
