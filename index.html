@@ -7,7 +7,7 @@
 <link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
 <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
 <script>
-  window.addEventListener("ucEvent", function(event) {
+  window.addEventListener("ucEvent", function(e) {
     if( e.detail && e.detail.event == "consent_status") {
       if(e.detail['Taggbox'] === true){
         document.getElementById('taggbox').innerHTML = "<div class='taggbox-socialwall' data-wall-id='57222' view-url='https://widget.taggbox.com/57222'></div><script src='https://widget.taggbox.com/embed.min.js' type='text/javascript'>'</scr'+'ipt>'";
