@@ -3,45 +3,12 @@
 <head>
   <script language="JavaScript" type="text/javascript" src="jquery-3.6.0.min.js"></script>
  <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle_legacy.js?" defer></script>
- <!-- <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+ <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
  <link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
- <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script"> -->
+ <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script">
  
 
-<script>
-   window.addEventListener("ucEvent", function (e) {  
-    if( e.detail && e.detail.event == "consent_status") {
-        // check for consent status of service "Google Ads Remarketing"
-        if(e.detail['Twitter Embed'] === true) {
-          var urlx = 'https://api.twitter.com/1/statuses/oembed.json?url=https://twitter.com/louisck/status/1209181253444030468';
-          $.ajax({
-              url: urlx,
-              type: 'GET',
-              dataType: 'jsonp',
-              success: function (result) {
-                  console.log('Got to the result');
-                  $('.twit').html(result.html);
-              }
-          });
-          var urlx2 = 'https://api.twitter.com/1/statuses/oembed.json?url=https://twitter.com/Erinmund/status/1378379148289306631';
-          $.ajax({
-              url: urlx2,
-              type: 'GET',
-              dataType: 'jsonp',
-              success: function (result) {
-                  console.log('Got to the result');
-                  $('.twit2').html(result.html);
-              }
-          });
-        }
-        else {
-          console.log('Twitter has no consent');
-        }
-    }
-  }
-);
 
-</script>
 
 </head>
 
@@ -54,11 +21,6 @@
         data-action='submit'>Submit
   </button>
 
-  <div class="twit" id="twit">
-    You will need to accept the Consents for Twitter Embed.
-  </div>  
-  <div class="twit2" id="twit">
-    You will need to accept the Consents for Twitter Embed.
-  </div> 
+ 
 </body>
 </html>
