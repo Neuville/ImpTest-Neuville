@@ -3,33 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <script language="JavaScript" type="text/javascript" src="jquery-3.6.0.min.js"></script>
-  <!-- <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle.js" async></script> -->
+  <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle.js" async></script>
   <!-- <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="MHrh9_Szi" ></script>  -->
   <!--<link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
  <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script"> -->
- <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-N5L6VFR');</script>
-  <!-- End Google Tag Manager -->
-<script> 
+ <script src="https://www.google.com/recaptcha/api.js"></script>
+ <script>
+  function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
+</script>
 
-  setTimeout( function(){ 
-    document.getElementById("maps").innerHTML = '<div class="uc-embed" uc-data="all"></div>'; 
-    window.UC_UI.enableScriptsForServicesWithConsent();
-  }, 3000); 
-
-</script> 
 </script>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5L6VFR"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
   <div>Test CMPv2 Legacy!</div>
   <iframe width="560" height="315" src="https://www.youtube.com/embed/GgAW8fH8_q8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <button class="g-recaptcha" id="p1"
@@ -37,8 +25,10 @@
         data-callback='onSubmit' 
         data-action='submit'>Submit
   </button>
-  <div id="maps">
-
-  </div>
+  <button class="g-recaptcha" 
+        data-sitekey="6LdVIqEaAAAAAD2-ZLbqrX0cD-zfY4hvkvw2HlMq
+        " 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button>
 </body>
 </html>
