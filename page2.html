@@ -8,12 +8,9 @@
   <!-- <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
   <link rel="preconnect" href="//privacy-proxy.usercentrics.eu">
  <link rel="preload" href="//privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js" as="script"> -->
- <script src="https://www.google.com/recaptcha/api.js"></script>
- <script>
-  function onSubmit(token) {
-    alert("nice google")
-  }
-</script>
+ 
+ <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <script type="text/plain" data-usercentrics="Google Tag Manager">
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -69,10 +66,10 @@
         data-callback='onSubmit' 
         data-action='submit'>Submit
   </button> -->
-  <button class="g-recaptcha" 
-        data-sitekey="6LdVIqEaAAAAAD2-ZLbqrX0cD-zfY4hvkvw2HlMq
-        " 
-        data-callback='onSubmit' 
-        data-action='submit'>Submit</button> 
+  <form action="?" method="POST">
+    <div class="g-recaptcha" data-sitekey="6Lcm6rkZAAAAABDVQXIJxIaBcR7AQMHQWCO2SA_F"></div>
+    <br/>
+    <input type="submit" value="Submit">
+  </form>
 </body>
 </html>
