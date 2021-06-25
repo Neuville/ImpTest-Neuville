@@ -1,18 +1,21 @@
 #bob{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    display: grid;
     background: lightgray;
 }
 #eyes{
     width: 100%;
 }
 #l-eye{
+    float:left;
     width: 25px;
     height: 50px;
     background: white;
     border-radius: 50% 50% 50% 50%;
 }
 #r-eye{
+    float:right;
     width: 25px;
     height: 50px;
     background: white;
