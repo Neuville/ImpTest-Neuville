@@ -1,9 +1,22 @@
+/*
+
+body
+
+*/
 body {
     margin: 0;
     padding: 0;
     background-color: rgb(177, 177, 177);
     font-family: 'Roboto', sans-serif;
 }
+
+
+
+/*
+
+navbar
+
+*/
 ul {
     position: fixed;
     top: 0;
@@ -34,6 +47,13 @@ li:hover {
 
 }
 
+
+
+/*
+
+content
+
+*/
 .body-base{
     margin: 65px 8px 0px 8px;
     padding: 8px 8px 8px 12px;
@@ -41,10 +61,137 @@ li:hover {
     border-radius: 8px;
 }
 
-.info {
+/*.body-content {
     margin: auto;
     padding: 10px;
     width: 50%;
+    text-align: center;
+}*/
+
+.header {
+    font-weight: 700;
+    font-size: 50px
+}
+
+.profile {
+    border-radius: 50%;
+}
+
+.header-text {
+    font-size: 25px;
+    width: 500px;
+}
+
+
+/*
+Primeiro - Navbars
+1.1 - Remover bullet points
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+1.2 - lista vertical
+Definir tamanho maximo do elemento da lista
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+
+li a {
+  display: block; - poe todas as linhas da lista como block elements, tornando toda a area
+do elemento clicavel e podemos assim determinar a altura e largura do elemento
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none; - tirar qualquer decoração no texto (linha dos hyperlinks)
+}
+-muda com o hover
+li a:hover {
+    background-color: #555;
+    color: white;
+  }
+
+1.3 - fixar a lista
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed; - fixar a lista
+  height: 100%; - ocupar a altura inteira da pagina
+  overflow: auto; - se a lista tiver muito conteudo entao deixa dar scroll
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+- muda se clicarmos em algo na lista
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+1.4 lista final horizontal
+ul {
+    position: fixed;
+    top: 0;
+    width: 100%; - ocupar a largura maxima
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; - nao queremos scroll na lista
+    background-color: #333;
+}
+
+
+li {
+    float: left; - poe todos os block elements em float uns aos lados dos outros pela esquerda
+}
+
+li a {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding: 14px 10px;
+    text-decoration: none;
+    color:white;
+}
+
+li:hover {
+    background-color: rgb(85, 196, 85);
+
+}
+
+2 - Criar o Cartao de boas vindas
+- criar o cartao
+- definir uma margem para nao aparecer debaixo da nav bar
+- padding para definir as margens entre o cartao e a janela
+.body-base{
+    margin: 65px 8px 0px 8px; top right bottom left
+    padding: 8px 8px 8px 12px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.body-content {
+    margin: auto; - centra o elemento
+    padding: 10px;
+    width: 50%; - elemento vai até metade do elemento pai
+    text-align: center; - centrar o texto
 }
 
 .header {
@@ -58,8 +205,7 @@ li:hover {
 
 .header-text {
     font-size: 25px;
-    text-align: justify;
-    text-justify: inter-word;
-    word-wrap: break-word;
     width: 500px;
 }
+
+*/
