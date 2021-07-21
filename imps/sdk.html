@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://app.usercentrics.eu/browser-sdk/2.4.0/bundle.js"></script>
+        <!-- <script type="application/javascript" src="https://app.usercentrics.eu/browser-sdk/1.13.0/bundle.js"></script> -->
+        <script>
+
+/*
+5383922664d13dd5e2999b7b7dfcd4e7f5c7ee09e042261291010a464bb57876
+5914fb2a10245fbcae25f442d7aa47d14a43af04e63047dcd14b0ded2d861dd8
+*/
+
+        //const UC = new UC_SDK.Usercentrics('GcEIoe8k');
+        const UC = new UC_SDK.default('WeohTvPpy');
+
+        UC.init().then((initialUIValues) => {
+        // getCategories() returns all categories' and data processing services' information
+        const categories = UC.getCategories();
+        // getSettings() returns all Usercentrics settings you need for your custom solution
+        const settings = UC.getSettings();
+
+        if (initialUIValues.variant === UC_SDK.UI_VARIANT.DEFAULT) {
+            switch (initialUIValues.initialLayer) {
+            case UC_SDK.UI_LAYER.FIRST_LAYER:
+                // Show first layer (i.e. privacy banner)
+                return;
+            case UC_SDK.UI_LAYER.PRIVACY_BUTTON:
+                // Show privacy button
+                return;
+            case UC_SDK.UI_LAYER.NONE:
+            default:
+                // Show nothing
+                return;
+            }
+        }
+        });
+    </script>
+    </head>
+    <body>
+        sdk
+    </body>
+</html>
