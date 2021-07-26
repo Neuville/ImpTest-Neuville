@@ -164,6 +164,58 @@ UC.updateLayer(UI_LAYER.FIRST_LAYER).then(() => {
   const tcfData = UC.getTCFData();
 });
 ```
+## Getting Services Information
+After UC is initialized you can retrive the services information, by using one of the following methods: `getServicesBaseInfo` or `getServicesFullInfo`. The method `getServices` was deprecated in the version 2.2.0-beta.3 and it will be deleted in version 3.0, so we advise you to update to these new methods, based in your needs:
+- `getServicesBaseInfo` retrieve all services with their base information, without fetching the aggregator.
+    - Returns [BaseService](https://docs.usercentrics.com/cmp_browser_sdk/2.5.0/interfaces/baseservice.html)[]
+```
+UC.init().then((initialUIValues) => {
+            // getSettings() returns all Usercentrics settings you need for your custom solution
+            const settings = UC.getSettings();
+            // getServicesBaseInfo() returns all the services with their base information
+            const servicesBase = UC.getServicesBaseInfo();
+            console.log("BASE INFO", servicesBase)
+... });
+```
+- `getServicesFullInfo` retrieves all services with their complete information, fetching the aggregator if necessary.
+    - Returns Promise<[Service](https://docs.usercentrics.com/cmp_browser_sdk/2.5.0/modules.html#service)[]>
+```
+UC.init().then((initialUIValues) => {
+            // getSettings() returns all Usercentrics settings you need for your custom solution
+            const settings = UC.getSettings();
+            // getServicesFullInfo() returns all services with their complete information
+            const servicesFull = UC.getServicesFullInfo()
+            servicesFull.then(info => {
+                console.log("FULL INFO", info)
+            });
+... });
+```
+## Getting Categories Information
+After UC is initialized you can retrive the categories information, by using one of the following methods: `getCategoriesBaseInfo` or `getCategoriesFullInfo`. The method `getCategories` was deprecated in the version 2.2.0-beta.3 and it will be deleted in version 3.0, so we advise you to update to these new methods, based in your needs:
+- `getCategoriesBaseInfo` retrieves the categories and their base services info to display this information in your UI.
+    - Returns [BaseCategory](https://docs.usercentrics.com/cmp_browser_sdk/2.5.0/interfaces/basecategory.html)[]
+```
+UC.init().then((initialUIValues) => {
+            // getSettings() returns all Usercentrics settings you need for your custom solution
+            const settings = UC.getSettings();
+            // getCategoriesBaseInfo() returns the categories and their base services info to display this information in your UI.
+            const categoriesBase = UC.getCategoriesBaseInfo();
+            console.log("BASE CATEGORIES INFO", categoriesBase)
+... });
+```
+- `getCategoriesFullInfo` retrieves the categories and their full services info to display this information in your UI.
+    - Returns Promise<[Category](https://docs.usercentrics.com/cmp_browser_sdk/2.5.0/interfaces/category.html)[]>
+```
+UC.init().then((initialUIValues) => {
+            // getSettings() returns all Usercentrics settings you need for your custom solution
+            const settings = UC.getSettings();
+            // getCategoriesFullInfo() returns the categories and their full services info to display this information in your UI.
+           const categoriesFull = UC.getCategoriesFullInfo();
+           categoriesFull.then(info => {
+                console.log("FULL INFO", info)
+            });
+... });
+```
 ## Cross-Device Consent Sharing
 **NOTE**: If the given `controllerId` returns no history from the Usercentrics backend, that `controllerId` will not be updated for the end user.
 ### controllerId is known before init

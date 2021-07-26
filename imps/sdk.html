@@ -18,7 +18,10 @@
         const categories = UC.getCategories();
         // getSettings() returns all Usercentrics settings you need for your custom solution
         const settings = UC.getSettings();
-
+        const servicesBase = UC.getServicesBaseInfo()
+        const servicesFull = UC.getServicesFullInfo()
+        console.log("BASE INFO", servicesBase)
+        console.log("Full INFO", servicesFull)
         if (initialUIValues.variant === UC_SDK.UI_VARIANT.DEFAULT) {
             switch (initialUIValues.initialLayer) {
             case UC_SDK.UI_LAYER.FIRST_LAYER:
@@ -37,6 +40,6 @@
     </script>
     </head>
     <body>
-        sdk
+        TCF2
     </body>
 </html>
