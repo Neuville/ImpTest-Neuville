@@ -12,8 +12,8 @@ const UC = new Usercentrics('YOUR_USERCENTRICS_SETTINGS_ID');
 UC.init().then((initialUIValues) => {
   // getSettings() returns all Usercentrics settings you need for your custom solution
   const settings = UC.getSettings();
-  // getCategories() returns all categories' and data processing services' information
-  const categories = UC.getCategories();
+  // getCategoriesBaseInfo() returns all categories' and data processing services' information
+  const categories = UC.getCategoriesBaseInfo();
   if (initialUIValues.variant === UI_VARIANT.DEFAULT) {
     switch (initialUIValues.initialLayer) {
       case UI_LAYER.FIRST_LAYER:
@@ -36,7 +36,7 @@ The constructor also supports an optional [Options](https://docs.usercentrics.co
 import Usercentrics, { UserDecision } from '@usercentrics/cmp-browser-sdk';
 const UC = new Usercentrics('YOUR_USERCENTRICS_SETTINGS_ID', { createTcfApiStub: true });
 UC.init().then((initialUIValues) => {
-  const categories = UC.getCategories();
+  const categories = UC.getCategoriesBaseInfo();
   const settings = UC.getSettings();
   /**
    * ...
@@ -44,20 +44,20 @@ UC.init().then((initialUIValues) => {
   const onAcceptAllHandler = (): void => {
     UC.acceptAllServices().then(() => {
       // Remember to fetch the now updated categories
-      const categories = UC.getCategories();
+      const categories = UC.getCategoriesBaseInfo();
     });
   };
   const onDenyAllHandler = (): void => {
     UC.denyAllServices().then(() => {
       // Remember to fetch the now updated categories
-      const categories = UC.getCategories();
+      const categories = UC.getCategoriesBaseInfo();
     });
   };
   const onSaveHandler = (userDecisions: UserDecision[]): void => {
     // UserDecisions needs to include all the user choices for each service that were made in your UI
     UC.updateServices(userDecisions).then(() => {
       // Remember to fetch the now updated categories
-      const categories = UC.getCategories();
+      const categories = UC.getCategoriesBaseInfo();
     });
   };
 });
@@ -95,7 +95,7 @@ The constructor also supports an optional [Options](https://docs.usercentrics.co
 For TCF, the `createTcfApiStub` option needs to be set to true in order for the \_\_tcfapi queue to initialize right away (we cannot wait for the settings request to finish).
 ## Accept / deny / update vendors, purposes, special features in the TCF context
 Note that both features and special purposes are for disclosing only and do not require any user decision. They cannot be updated.
-Note that if TCF is enabled, the default (non-TCF) data is still available (e.g. getCategories()). A hybrid UI can be built if both
+Note that if TCF is enabled, the default (non-TCF) data is still available (e.g. getCategoriesBaseInfo()). A hybrid UI can be built if both
 sets of methods (TCF and default (non-TCF)) are called.
 ```ts
 import Usercentrics, { TCF_DECISION_UI_LAYER } from '@usercentrics/cmp-browser-sdk';
@@ -141,7 +141,7 @@ UC.changeLanguage('NEW_LANGUAGE').then(() => {
   // Remember to fetch new (translated) settings
   const settings = UC.getSettings();
   // If you use the default (non-TCF) setup, make sure to fetch new (translated) categories / settings
-  const categories = UC.getCategories();
+  const categories = UC.getCategoriesBaseInfo();
   // If you use the TCF setup, make sure to fetch new (translated) tcfData
   const tcfData = UC.getTCFData();
 });
@@ -159,19 +159,17 @@ UC.updateLayer(UI_LAYER.FIRST_LAYER).then(() => {
   // Remember to fetch new (translated) settings
   const settings = UC.getSettings();
   // If you use the default (non-TCF) setup, make sure to fetch new (translated) categories / settings
-  const categories = UC.getCategories();
+  const categories = UC.getCategoriesBaseInfo();
   // If you use the TCF setup, make sure to fetch new (translated) tcfData
   const tcfData = UC.getTCFData();
 });
 ```
 ## Getting Services Information
-After UC is initialized you can retrive the services information, by using one of the following methods: `getServicesBaseInfo` or `getServicesFullInfo`. The method `getServices` was deprecated in the version 2.2.0-beta.3 and it will be deleted in version 3.0, so we advise you to update to these new methods, based in your needs:
+After UC is initialized you can retrieve the services information, by using one of the following methods: `getServicesBaseInfo` or `getServicesFullInfo`. The method `getServices` was deprecated in the version 2.2.0-beta.3 and it will be deleted in version 3.0, so we advise you to update to these new methods, based in your needs:
 - `getServicesBaseInfo` retrieve all services with their base information, without fetching the aggregator.
     - Returns [BaseService](https://docs.usercentrics.com/cmp_browser_sdk/2.5.0/interfaces/baseservice.html)[]
 ```
 UC.init().then((initialUIValues) => {
-            // getSettings() returns all Usercentrics settings you need for your custom solution
-            const settings = UC.getSettings();
             // getServicesBaseInfo() returns all the services with their base information
             const servicesBase = UC.getServicesBaseInfo();
             console.log("BASE INFO", servicesBase)
@@ -181,8 +179,6 @@ UC.init().then((initialUIValues) => {
     - Returns Promise<[Service](https://docs.usercentrics.com/cmp_browser_sdk/2.5.0/modules.html#service)[]>
 ```
 UC.init().then((initialUIValues) => {
-            // getSettings() returns all Usercentrics settings you need for your custom solution
-            const settings = UC.getSettings();
             // getServicesFullInfo() returns all services with their complete information
             const servicesFull = UC.getServicesFullInfo()
             servicesFull.then(info => {
@@ -191,13 +187,11 @@ UC.init().then((initialUIValues) => {
 ... });
 ```
 ## Getting Categories Information
-After UC is initialized you can retrive the categories information, by using one of the following methods: `getCategoriesBaseInfo` or `getCategoriesFullInfo`. The method `getCategories` was deprecated in the version 2.2.0-beta.3 and it will be deleted in version 3.0, so we advise you to update to these new methods, based in your needs:
+After UC is initialized you can retrieve the categories information, by using one of the following methods: `getCategoriesBaseInfo` or `getCategoriesFullInfo`. The method `getCategories` was deprecated in the version 2.2.0-beta.3 and it will be deleted in version 3.0, so we advise you to update to these new methods, based in your needs:
 - `getCategoriesBaseInfo` retrieves the categories and their base services info to display this information in your UI.
     - Returns [BaseCategory](https://docs.usercentrics.com/cmp_browser_sdk/2.5.0/interfaces/basecategory.html)[]
 ```
 UC.init().then((initialUIValues) => {
-            // getSettings() returns all Usercentrics settings you need for your custom solution
-            const settings = UC.getSettings();
             // getCategoriesBaseInfo() returns the categories and their base services info to display this information in your UI.
             const categoriesBase = UC.getCategoriesBaseInfo();
             console.log("BASE CATEGORIES INFO", categoriesBase)
@@ -207,8 +201,6 @@ UC.init().then((initialUIValues) => {
     - Returns Promise<[Category](https://docs.usercentrics.com/cmp_browser_sdk/2.5.0/interfaces/category.html)[]>
 ```
 UC.init().then((initialUIValues) => {
-            // getSettings() returns all Usercentrics settings you need for your custom solution
-            const settings = UC.getSettings();
             // getCategoriesFullInfo() returns the categories and their full services info to display this information in your UI.
            const categoriesFull = UC.getCategoriesFullInfo();
            categoriesFull.then(info => {
@@ -259,8 +251,8 @@ You can now access all methods/constants by using them from within the `UC_SDK` 
 ```js
 const UC = new UC_SDK.default('YOUR_USERCENTRICS_SETTINGS_ID');
 UC.init().then((initialUIValues) => {
-  // getCategories() returns all categories' and data processing services' information
-  const categories = UC.getCategories();
+  // getCategoriesBaseInfo() returns all categories' and data processing services' information
+  const categories = UC.getCategoriesBaseInfo();
   // getSettings() returns all Usercentrics settings you need for your custom solution
   const settings = UC.getSettings();
   if (initialUIValues.variant === UC_SDK.UI_VARIANT.DEFAULT) {
