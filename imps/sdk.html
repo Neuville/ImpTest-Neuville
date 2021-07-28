@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://app.usercentrics.eu/browser-sdk/2.4.0/bundle.js"></script>
+        <script src="https://app.usercentrics.eu/browser-sdk/2.5.2/bundle.js"></script>
         <!-- <script type="application/javascript" src="https://app.usercentrics.eu/browser-sdk/1.13.0/bundle.js"></script> -->
         <script>
 
@@ -14,29 +14,29 @@
         const UC = new UC_SDK.default('WeohTvPpy');
 
         UC.init().then((initialUIValues) => {
-        // getCategories() returns all categories' and data processing services' information
-        const categories = UC.getCategories();
-        // getSettings() returns all Usercentrics settings you need for your custom solution
-        const settings = UC.getSettings();
-        const servicesBase = UC.getServicesBaseInfo()
-        const servicesFull = UC.getServicesFullInfo()
-        console.log("BASE INFO", servicesBase)
-        console.log("Full INFO", servicesFull)
-        if (initialUIValues.variant === UC_SDK.UI_VARIANT.DEFAULT) {
-            switch (initialUIValues.initialLayer) {
-            case UC_SDK.UI_LAYER.FIRST_LAYER:
-                // Show first layer (i.e. privacy banner)
-                return;
-            case UC_SDK.UI_LAYER.PRIVACY_BUTTON:
-                // Show privacy button
-                return;
-            case UC_SDK.UI_LAYER.NONE:
-            default:
-                // Show nothing
-                return;
+            // getCategories() returns all categories' and data processing services' information
+            const categories = UC.getCategories();
+            // getSettings() returns all Usercentrics settings you need for your custom solution
+            const settings = UC.getSettings();
+            const servicesBase = UC.getServicesBaseInfo()
+            const servicesFull = UC.getServicesFullInfo()
+            console.log("BASE INFO", servicesBase)
+            console.log("Full INFO", servicesFull)
+            if (initialUIValues.variant === UC_SDK.UI_VARIANT.DEFAULT) {
+                switch (initialUIValues.initialLayer) {
+                case UC_SDK.UI_LAYER.FIRST_LAYER:
+                    // Show first layer (i.e. privacy banner)
+                    return;
+                case UC_SDK.UI_LAYER.PRIVACY_BUTTON:
+                    // Show privacy button
+                    return;
+                case UC_SDK.UI_LAYER.NONE:
+                default:
+                    // Show nothing
+                    return;
+                }
             }
-        }
-        });
+            });
     </script>
     </head>
     <body>
