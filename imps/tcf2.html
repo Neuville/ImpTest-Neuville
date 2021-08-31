@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script id="usercentrics-cmp" data-settings-id="BJoxI2fFb" src="https://app.usercentrics.eu/browser-ui/latest/bundle.js" data-tcf-enabled></script>
+        <script id="usercentrics-cmp" data-settings-id="BJoxI2fFb" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-tcf-enabled></script>
+        <script type="text/javascript">
+            console.log('general: app begin');
+    
+            __tcfapi('addEventListener', 2, (tcData, success) => {
+              if ( success && tcData.eventStatus === 'tcloaded' ) {
+                console.log('general: __tcfapi tcloaded success');
+                console.log(UC_UI)
+                console.log('general: typeof UC_UI:', typeof UC_UI);
+                window.addEventListener('UC_UI_INITIALIZED', () => {
+                    console.log('general: typeof UC_UI after UC_UI_INITIALIZED event:', typeof UC_UI);
+                });
+              }
+            });
+        </script>
     </head>
     <body>
         TCF2

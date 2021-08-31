@@ -2,33 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="bob.css">
+  <script src="https://app.usercentrics.eu/browser-sdk/2.6.1/bundle_legacy.js"></script>
+  <script>
+      const UC = new UC_SDK.default('WeohTvPpy');
+
+UC.init().then((initialUIValues) => {
+  // getCategories() returns all categories' and data processing services' information
+  const categories = UC.getCategories();
+  // getSettings() returns all Usercentrics settings you need for your custom solution
+  const settings = UC.getSettings();
+
+  if (initialUIValues.variant === UC_SDK.UI_VARIANT.DEFAULT) {
+    switch (initialUIValues.initialLayer) {
+      case UC_SDK.UI_LAYER.FIRST_LAYER:
+        // Show first layer (i.e. privacy banner)
+        return;
+      case UC_SDK.UI_LAYER.PRIVACY_BUTTON:
+        // Show privacy button
+        return;
+      case UC_SDK.UI_LAYER.NONE:
+      default:
+        // Show nothing
+        return;
+    }
+  }
+});
+  </script>
+
 </head>
 
 <body>
-    <div id="bob">
-        <div id="face">
-            <div id="eyes">
-                <div id="l-eye"></div>
-                <div id="r-eye"></div>
-            </div>
-            <div id="mouth">
+    <div id="bob">hey</div>
 
-            </div>
-        </div>
-        <div id="arms">
-            <div id="l-arm"></div>
-            <div id="r-arm"></div>
-        </div>
-        <div id="feet">
-            <div id="l-foot"></div>
-            <div id="r-foot"></div>
-        </div>
-        <div id="hair">
-            <div id="l-hairspike"></div>
-            <div id="r-hairspike"></div>
-        </div>
-    </div>
-    <a href="index.html">Leave you fool! leave bob alone!</a>
 </body>
 </html>
