@@ -16,7 +16,20 @@
 </script>
 <script src="https://www.googleoptimize.com/optimize.js?id=OPT-TC78X28"></script>
 
-
+<script>
+  (function() {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/web-vitals';
+      script.onload = function() {
+          webVitals.getCLS(saveToGlobal, true);
+      }
+      document.head.appendChild(script);
+      window.top['jpx_cls'] = 0.000;
+      function saveToGlobal(trackObj) {
+          window.top['jpx_cls'] = trackObj;
+      }
+  }())
+</script>
 </script>
 </head>
 
