@@ -10,45 +10,44 @@
     <!-- End of Validation Error fix code -->
     <!-- AMP Code -->
     <meta charset="utf-8">
-    
+
     <!-- Includes and loads the AMP JS library -->
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    
+
     <title>Hello, AMPs</title>
-    
+
     <!--Points to the regular HTML version of this AMP page or to itself if no such tradicional HTML page exists.
     In this case, we decided to point to this page-->
     <link rel="canonical" href="https://usercentrics.atlassian.net/wiki/spaces/TSK/pages/581959717/AMP+Implementation+Test">
-    
+
     <!--Specifies a responsive viewport-->
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-       
+        
     <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
 
-    </head>
-    
-    <body>
-        <!-- AMP boilerplate code to include Usercentrics CMP in website -->
-   <!-- Below we are using the specific usercentrics settingsId "egLMgjg9j" -->
+</head>
+
+<body>
+    <!-- AMP boilerplate code to include Usercentrics CMP in website -->
+    <!-- Below we are using the specific usercentrics settingsId "egLMgjg9j" -->
     <amp-consent layout="nodisplay" id="consent-element" type="Usercentrics">
-        <amp-consent layout="nodisplay" id="consent-element" type="usercentrics">
-            <script type="application/json">
-              {
-              "promptUISrc": "https://amp.usercentrics.eu/amp-prompt-ui.html",
-              "postPromptUI": "post-prompt-ui",
-              "consentRequired": "remote",
-              "consentInstanceId": "usercentrics",
-              "checkConsentHref": "https://consents.usercentrics.eu/amp/checkConsent",
-              "clientConfig": {.
-                  "id": "egLMgjg9j"
-              } }
-            </script>
-            </amp-consent>
+        <script type="application/json">
+            {
+            "promptUISrc": "https://amp.usercentrics.eu/amp-prompt-ui.html",
+            "postPromptUI": "post-prompt-ui",
+            "consentRequired": "remote",
+            "consentInstanceId": "usercentrics",
+            "checkConsentHref": "https://consents.usercentrics.eu/amp/checkConsent",
+            "clientConfig": {.
+                "id": "egLMgjg9j"
+            } }
+        </script>
+        </amp-consent>
     </amp-consent>
     <!-- END of AMP boilerplate code to include Usercentrics CMP in website -->
         <!-- Page Content -->
     <h1>Welcome to the mobile web</h1>
-    
+
     </div>
-    </body>
+</body>
 </html>
