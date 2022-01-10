@@ -31,14 +31,19 @@
         <!-- AMP boilerplate code to include Usercentrics CMP in website -->
    <!-- Below we are using the specific usercentrics settingsId "egLMgjg9j" -->
     <amp-consent layout="nodisplay" id="consent-element" type="Usercentrics">
-        <script type="application/json">
-            {
-                "postPromptUI": "post-prompt-ui",
-                "clientConfig": {
-                    "id": "egLMgjg9j"
-                }
-            }
-        </script>
+        <amp-consent layout="nodisplay" id="consent-element" type="usercentrics">
+            <script type="application/json">
+              {
+              "promptUISrc": "https://amp.usercentrics.eu/amp-prompt-ui.html",
+              "postPromptUI": "post-prompt-ui",
+              "consentRequired": "remote",
+              "consentInstanceId": "usercentrics",
+              "checkConsentHref": "https://consents.usercentrics.eu/amp/checkConsent",
+              "clientConfig": {.
+                  "id": "egLMgjg9j"
+              } }
+            </script>
+            </amp-consent>
     </amp-consent>
     <!-- END of AMP boilerplate code to include Usercentrics CMP in website -->
         <!-- Page Content -->
