@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script id="usercentrics-cmp" data-settings-id="V7wLiZrJC" src="https://app.usercentrics.eu/browser-ui/latest/bundle.js" async></script>
-   
+        <script id="usercentrics-cmp" data-settings-id="WeohTvPpy" src="https://app.usercentrics.eu/browser-ui/latest/bundle.js" async></script>
+        <script>
+            window.addEventListener("UC_UI_CMP_EVENT", (data) => {
+                console.log(`TEST: source => ${data.detail.source} && type => ${data.detail.type}`)
+            });
+        </script>
     </head>
     <body>
-        <div class="uc-embed" uc-data="all"></div>
+        test
     </body>
 </html>

@@ -7,7 +7,19 @@
   <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="WeohTvPpy" async></script>
   
 
-
+  <script>
+    window.addEventListener("ucEvent", function (e) {    
+        if( e.detail && e.detail.event == "consent_status") {
+                // check for consent status of service "Google Ads Remarketing"
+                if(e.detail['Google Analytics'] === true) {
+                console.log('Google Ads Remarketing has consent');
+                }
+                else {
+                console.log('Google Ads Remarketing has no consent');
+                }
+            }
+        });
+</script>
 </script>
 
 </script>

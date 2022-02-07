@@ -10,13 +10,10 @@
         UC.init().then((initialUIValues) => {
             // getCategories() returns all categories' and data processing services' information
             const categories = UC.getCategories();
+            console.log(categories)
             // getSettings() returns all Usercentrics settings you need for your custom solution
             const settings = UC.getSettings();
-            UC.changeLanguage('de').then(() => {
-                UC.acceptAllServices().then(function () {
-                    console.log(UC.getCategoriesBaseInfo())
-                })
-            })
+            
             if (initialUIValues.variant === UC_SDK.UI_VARIANT.DEFAULT) {
                 switch (initialUIValues.initialLayer) {
                 case UC_SDK.UI_LAYER.FIRST_LAYER:
@@ -36,21 +33,5 @@
     </head>
     <body>
         TCF2
-        <button onclick="javascript:console.log(`enforce ${UC_UI.getSettings().controllerId}`);UC_UI.clearStorage().then(() => {
-            console.log('in extracted');
-            console.log('extracted ' + UC_UI.getSettings().controllerId);
-            const _usercentrics = new Usercentrics('GVl-ixMH', {
-              language: 'de'
-            });
-            console.log('after new ' + _usercentrics.getControllerId());
-            _usercentrics
-              .init()
-              .then(initialUiValue => {
-                console.log('initialUiValue', initialUiValue);
-              })
-              .catch(ignored => {
-                //_usercentrics_initialized = false;    
-              });
-          });">Clear Storage</button>
     </body>
 </html>
