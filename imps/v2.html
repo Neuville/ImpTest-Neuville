@@ -6,6 +6,11 @@
     </head>
     <body>
         test
-        <a href="javascript:UC_UI.showSecondLayer()">hello</a>
+        <div id="uc-show-layer">hello2</div>
+        <script>
+          document.getElementById("uc-show-layer").addEventListener("click", function() {
+            UC_UI.showSecondLayer();
+          });
+        </script>
     </body>
 </html>
