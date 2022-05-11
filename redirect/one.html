@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="lGqePJA75" async></script>
+        <script>
+            window.addEventListener("UC_UI_INITIALIZED", function(e){
+                if (localStorage.getItem('uc_interacted') === null){
+                    window.localStorage.setItem('uc_interacted', false)
+                    var UC_UI_SUPPRESS_CMP_DISPLAY=true;
+                }
+                var interacted = JSON.parse(localStorage.uc_interacted) 
+                if(!interacted) {
+                    window.location.replace("https://neuville.github.io/ImpTest-Neuville/redirect/consent.html")
+                }
+            })
+        </script>
+    </head>
+    <body>
+      <button id="demo">Consent Page</button>
+    </body>
+</html>

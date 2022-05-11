@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+        <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="lGqePJA75" async></script>
+        <script>
+            window.addEventListener('UC_UI_CMP_EVENT', function(e){
+                if(event.detail.view === 'ACCEPT_ALL' || event.detail.view === 'DENY_ALL' || event.detail.view === 'SAVE'){
+                    window.localStorage.setItem('uc_interacted', true)
+                    window.location.replace("https://neuville.github.io/ImpTest-Neuville/redirect/one.html")
+                }
+            })
+        </script>
+    </head>
+    <body>
+      <button id="demo">Redirect Page</button>
+    </body>
+</html>
