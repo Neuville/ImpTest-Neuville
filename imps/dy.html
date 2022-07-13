@@ -44,6 +44,18 @@
                 name: "CMP_SHOWN"
             })
         </script>
+       <script>
+        function dyEvent() {
+         console.log("element clicked")
+          DY.API("event", {
+          name: "ACCEPT_ALL",
+          properties: {  
+            source: "SECOND_LAYER",
+        type:"CMP_SHOWN"
+          }
+        })
+        }
+        </script>
 
     </head>
     <body>
