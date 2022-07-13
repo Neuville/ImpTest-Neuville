@@ -3,19 +3,12 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
         <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="lGqePJA75" async></script>
-        <script>
-          var UC_UI_SUPPRESS_CMP_DISPLAY=true;
-          window.onload=function(){
-            document.getElementById("demo").addEventListener("click", myFunction);
-    
-            function myFunction() {
-              UC_UI_SUPPRESS_CMP_DISPLAY=false;
-              window.UC_UI.showFirstLayer()
-            }
-          }
-        </script>
+        <link rel="stylesheet" href="v2.css">
     </head>
     <body>
       <button id="demo">Load CMP</button>
+      <button class="button" href="#" onClick="UC_UI.showSecondLayer();">
+        BTN
+      </button>
     </body>
 </html>
