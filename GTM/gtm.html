@@ -11,6 +11,17 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-N5L6VFR');</script>
   <!-- End Google Tag Manager -->
+  <script>
+    window.addEventListener("ucEvent", function (e) {    
+        //To be sure that UC_UI is initialized - window.UC_UI && window.UC_UI.isInitialized()
+        if( e.detail && e.detail.event == "consent_status" && window.UC_UI && window.UC_UI.isInitialized()) {
+          if(UC_UI.getServicesBaseInfo().filter(el => el.categorySlug === 'marketing').every(el => (el.consent && el.consent.status === true))){
+            console.log("GTM Push Logic")
+            dataLayer.push({'event': 'consent_aftermath'})
+          }
+        }
+    });
+  </script>
 
 </script>
 </head>

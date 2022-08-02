@@ -4,6 +4,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
         <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="lGqePJA75" async></script>
         <link rel="stylesheet" href="v2.css">
+        <script>
+          window.addEventListener("ucEvent", function (e) {    
+              if( e.detail && e.detail.event == "consent_status" && window.UC_UI && window.UC_UI.isInitialized()) {
+                if(UC_UI.getServicesBaseInfo().filter(el => el.categorySlug === 'marketing').every(el => (el.consent && el.consent.status === true))){
+                  console.log("GTM")
+                }
+              }
+          });
+        </script>
     </head>
     <body>
       <button id="demo">Load CMP</button>
