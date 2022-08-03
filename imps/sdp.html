@@ -6,7 +6,12 @@
   
   <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="19boiyb_2" async></script>
   <script type="application/javascript" src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
-
+  <script>
+    uc.deactivateBlocking([
+      't0PDakEh1', // Google Analytics (Custom ID) is not blocked
+      // ... you can also add more service IDs similarly
+    ]);
+    </script>
   <script type="text/plain" data-usercentrics="Google Analytics" src="https://www.google-analytics.com/analytics.js"></script>
 
 </script>
