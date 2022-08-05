@@ -3,25 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="WeohTvPpy" async></script>
+  <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="19boiyb_2" async></script>
   <!-- Google Tag Manager -->
  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-N5L6VFR');</script>
-  <!-- End Google Tag Manager -->
-  <script>
-    window.addEventListener("ucEvent", function (e) {    
-        //To be sure that UC_UI is initialized - window.UC_UI && window.UC_UI.isInitialized()
-        if( e.detail && e.detail.event == "consent_status" && window.UC_UI && window.UC_UI.isInitialized()) {
-          if(UC_UI.getServicesBaseInfo().filter(el => el.categorySlug === 'marketing').every(el => (el.consent && el.consent.status === true))){
-            console.log("GTM Push Logic")
-            dataLayer.push({'event': 'consent_aftermath'})
-          }
-        }
+
+
+  <script type="text/javascript">
+    // create dataLayer
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // set „denied" as default for both ad and analytics storage,
+    gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        wait_for_update: 2000 // milliseconds to wait for update
     });
+
+    // Enable ads data redaction by default [optional]
+    gtag("set", "ads_data_redaction", true);
   </script>
+
+  <script type="text/javascript">
+    // Google Tag Manager
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N5L6VFR'); //replace GTM-XXXXXX with Google Tag Manager ID
+  </script>
+  <!-- End Google Tag Manager -->
 
 </script>
 </head>
