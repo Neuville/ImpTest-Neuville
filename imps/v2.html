@@ -8,7 +8,7 @@
           window.addEventListener("ucEvent", function (e) {    
               if( e.detail && e.detail.event == "consent_status" && window.UC_UI && window.UC_UI.isInitialized()) {
                 if(UC_UI.getServicesBaseInfo().filter(el => el.categorySlug === 'marketing').every(el => (el.consent && el.consent.status === true))){
-                  console.log("GTM")
+                  console.log("GTM Push Logic")
                 }
               }
           });
