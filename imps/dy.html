@@ -23,7 +23,7 @@
                 var x = window.UC_AB_VARIANT;
                 console.log(x)
                 const div = document.getElementById("variant")
-                div.textContent = x
+                div.textContent = "This is currently " + x
                 console.log(data)
                 console.log(`TEST: source => ${data.detail.source} && type => ${data.detail.type}`);
                 DY.API("event", {
@@ -48,9 +48,9 @@
       <h1>
         Welcome to a DY + UC Test Page.
       </h1>
-      <div id="variant">
+      <h2 id="variant">
 
-      </div>
+      </h2>
     </body>
 </html>
 
