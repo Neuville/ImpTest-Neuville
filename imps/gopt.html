@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <?php
+  // Sets the ID of the experiment on variants of this web page.
+  $experimentId = '16iQisXuS1qwXDixwB-EWgQ';
+  ?>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="WeohTvPpy" async></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8BH4RPMZFF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174643135-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-8BH4RPMZFF');
-</script>
-<script src="https://www.googleoptimize.com/optimize.js?id=OPT-TC78X28"></script>
-<script>
+    gtag('config', 'UA-174643135-4');
+  </script>
 
-window.addEventListener('onUcAnchorClick', function(event) {
-  console.log('Click on the privacy link.');
-});
+  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-TC78X28"></script>
+  <script type="text/javascript">
+    window.addEventListener('UC_UI_CMP_EVENT', (data) => {
+        console.log(data)
+        console.log(`TEST: source => ${data.detail.source} && type => ${data.detail.type}`);
+        gtag('event', `${data.detail.source}`, {​
+        'experiment_id': '6Vo8-ck8TM276EyRc0WRng',
+        'variant_id': '$experimentId.$variantid',
+        'send_to': 'UA-174643135-4',
+      });
+    });
+  </script>
+  </script>
 
-</script>
+  </script>
+  </head>
 
-</script>
-</head>
-
-<body>
+  <body>
 
 
-  <div>Google Otimize Test</div>
- 
+    <div>Google Otimize Test</div>
+  
 
-</body>
-</html>
+  </body>
+ </html>
