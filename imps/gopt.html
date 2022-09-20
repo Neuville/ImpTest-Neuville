@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php
-  // Sets the ID of the experiment on variants of this web page.
-  $experimentId = '16iQisXuS1qwXDixwB-EWgQ';
-  ?>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,11 +26,7 @@
       window.addEventListener('UC_UI_CMP_EVENT', (data) => {
           console.log(data)
           console.log(`TEST: source => ${data.detail.source} && type => ${data.detail.type}`);
-          gtag('event', data.detail.source, {​
-          'experiment_id': '6Vo8-ck8TM276EyRc0WRng',
-          'variant_id': '$experimentId.$variantid',
-          'send_to': 'UA-174643135-4',
-        });
+          console.log(window.UC_AB_VARIANT)
       });
     </script>
 
