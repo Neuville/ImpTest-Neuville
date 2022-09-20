@@ -14,7 +14,7 @@
     window.addEventListener('UC_UI_CMP_EVENT', (data) => {
         console.log(data)
         console.log(`TEST: source => ${data.detail.source} && type => ${data.detail.type}`);
-        gtag('event', `${data.detail.source}`, {​
+        gtag('event', data.detail.source, {​
         'experiment_id': '6Vo8-ck8TM276EyRc0WRng',
         'variant_id': '$experimentId.$variantid',
         'send_to': 'UA-174643135-4',
