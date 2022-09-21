@@ -33,8 +33,9 @@
       window.addEventListener('UC_UI_CMP_EVENT', (data) => {
         console.log(data)
         console.log(`TEST: source => ${data.detail.source} && type => ${data.detail.type}`);
-        dataLayer.push({
-          'event': data.detail.type,
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('event', data.detail.type, {
           'category': data.detail.source.toLowerCase(),
           'action': data.detail.type.toLowerCase(),
           'label': `${data.detail.source.toLowerCase()} event`
