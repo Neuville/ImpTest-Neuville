@@ -38,8 +38,8 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('event', `${data.detail.type.toLowerCase()} in ${data.detail.source.toLowerCase()}`, {
-          'event_category': data.detail.source.toLowerCase(),
-          'event_label': data.detail.type.toLowerCase(),
+          'event_category': `${data.detail.source.toLowerCase()} event`,
+          'event_label': `${data.detail.type.toLowerCase()}`,
         })
       });
     </script>
