@@ -9,7 +9,7 @@
 
         UC.init().then((initialUIValues) => {
         // getCategories() returns all categories' and data processing services' information
-        const categories = UC.getCategories();
+        const categories = UC.getCategoriesBaseInfo();
         // getSettingsCore() and getSettingsLabels() returns all Usercentrics settings you need for your custom solution
         const settings = UC.getSettingsCore();
         const labels = UC.getSettingsLabels();
