@@ -16,6 +16,7 @@
           gtag("consent", "default", {
               ad_storage: "denied",
               analytics_storage: "denied",
+              security_storage: "denied",
               wait_for_update: 2000 // milliseconds to wait for update
           });
   
@@ -40,6 +41,31 @@
               f.parentNode.insertBefore(j, f);
           })(window, document, 'script', 'dataLayer', 'GTM-TBJ6LK6'); //replace GTM-XXXXXX with Google Tag Manager ID
       </script>
+      <script type="text/javascript">
+        // Please replace 'ucEvent' with the event you have just created
+        window.addEventListener("ucEvent", function (e) {
+            if( e.detail && e.detail.event == "consent_status") {
+                console.log("Entrou no evento")
+                console.log(e)
+                if(e.detail.ucCategory["marketing"])
+                {
+                    console.log("it twerks looooool")
+                    gtag("consent", "update", {
+                        security_storage: e.detail.ucCategory["marketing"] ? 'granted':'denied',
+                    });
+                }
+                else {            
+                    if(e.detail.ucCategory["marketing"]) {
+                        console.log("it twerks looooool")
+                        gtag("consent", "update", {
+                            security_storage: e.detail.ucCategory["marketing"] ? 'granted':'denied',
+                        });
+                    } 
+                }
+            }
+        });
+        </script>
+        
   
     <!-- End Google Tag Manager -->
     <!-- Google tag (gtag.js) type="text/plain" data-usercentrics="Google Analytics 4" -->
