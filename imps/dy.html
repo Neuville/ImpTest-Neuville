@@ -2,43 +2,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-
-        <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-version="preview" data-settings-id="19boiyb_2" async></script>
-        <script type="text/javascript">
-            window.addEventListener('UC_UI_CMP_EVENT', (data) => {
-                console.log(data)
-                console.log(`TEST: source => ${data.detail.source} && type => ${data.detail.type}`);
-                DY.API("event", {
-                    name: data.detail.type,
-                    properties: {
-                        data:{
-                            detail:{
-                                source: data.detail.source,
-                                type: data.detail.type
-                            }
-                        }
-                    }
-                });
-            });
-        </script>
-
-        <link rel="preconnect" href="//cdn.dynamicyield.com">
-        <link rel="preconnect" href="//st.dynamicyield.com">
-        <link rel="preconnect" href="//rcom.dynamicyield.com">
-        <link rel="dns-prefetch" href="//cdn.dynamicyield.com">
-        <link rel="dns-prefetch" href="//st.dynamicyield.com">
-        <link rel="dns-prefetch" href="//rcom.dynamicyield.com">
-        <script type="text/javascript" src="//cdn.dynamicyield.com/api/8779104/api_dynamic.js"></script>
-        <script type="text/javascript" src="//cdn.dynamicyield.com/api/8779104/api_static.js"></script>
-
-        <script>
-
-        </script>
-    </head>
+        <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="7JyUriEjMyLLNq" async></script>
+        <script id="usercentrics-ppg" privacy-policy-id="11d7f924-338b-4f6e-a8e9-34bce7d352e7" src="https://policygenerator.usercentrics.eu/api/privacy-policy" > </script>
+         </head>
     <body>
-      <h1>
-        Welcome to a DY + UC Test Page.
-      </h1>
+        <div>This is a Test</div>
+        <div class="uc-privacy-policy"></div>
     </body>
 </html>
